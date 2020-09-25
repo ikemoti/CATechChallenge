@@ -32,10 +32,6 @@ final class FeedCellViewController: UIViewController {
     let viewModel = FeedCellViewModel()
     private let disposeBag: DisposeBag = .init()
     
-//    @IBOutlet private weak var playerContainerView: UIView!
-    
-//    @IBOutlet weak var playerContainerView: UIView!
-    
     @IBOutlet weak var playerContainerView: UIView!
     private let playerViewController: AVPlayerViewController = {
         let playerVC = AVPlayerViewController()
