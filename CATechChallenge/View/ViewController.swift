@@ -57,59 +57,59 @@ final class FeedCellViewController: UIViewController {
     }
     private func setUpRx(){
         commentButton.rx.tap
-                   .bind(to: viewModel.commentButtonTaped)
-                   .disposed(by: disposeBag)
-               
+            .bind(to: viewModel.commentButtonTaped)
+            .disposed(by: disposeBag)
+        
         hideTableViewButton.rx.tap
-                   .bind(to: viewModel.hideTableViewButtonTaped)
-                   .disposed(by: disposeBag)
+            .bind(to: viewModel.hideTableViewButtonTaped)
+            .disposed(by: disposeBag)
         
         hideFlowCommentButton.rx.tap
-                   .bind(to: viewModel.hideFlowCommentButtonTaped)
-                   .disposed(by: disposeBag)
+            .bind(to: viewModel.hideFlowCommentButtonTaped)
+            .disposed(by: disposeBag)
         
         viewModel.comments
-                   .bind(to: self.tableView.rx.items(cellIdentifier: "Cell", cellType: CommentCell.self))
-                   { (row, element, cell) in
-                    let message = element.message
-                   cell.addItem(text: message)}
-                   .disposed(by: disposeBag)
-               
+            .bind(to: self.tableView.rx.items(cellIdentifier: "Cell", cellType: CommentCell.self))
+            { (row, element, cell) in
+                let message = element.message
+                cell.addItem(text: message)}
+            .disposed(by: disposeBag)
+        
         viewModel.addcomments.subscribe(onNext:{[weak self] comment in
-                   guard let self = self else {return}
-                   self.postComment(comment: comment.message)
-                   self.headerCommentLabel.text = "\(self.viewModel.comments.value.count)"
-                   self.personCount += (Int.random(in: 0...1000))
-                   self.headerPersonLabel.text = "\(self.personCount)"
-                   })
-                   .disposed(by: disposeBag)
-               
+            guard let self = self else {return}
+            self.postComment(comment: comment.message)
+            self.headerCommentLabel.text = "\(self.viewModel.comments.value.count)"
+            self.personCount += (Int.random(in: 0...1000))
+            self.headerPersonLabel.text = "\(self.personCount)"
+        })
+        .disposed(by: disposeBag)
+        
         viewModel.hideTableViewBool.subscribe(onNext: {[weak self] isHidden in
-                   guard let self = self else {return}
-                   self.tableView.isHidden = isHidden
-                if self.tableView.isHidden == true { self.hideTableViewButton.setTitle("コメント表示", for: .normal)
-                    self.hideTableViewButton.backgroundColor = UIColor(white: 0.2, alpha: 1)
-                }
-                else {
-                    self.hideTableViewButton.setTitle("コメント非表示", for: .normal)
-                    self.hideTableViewButton.backgroundColor = UIColor(white: 0.3, alpha: 1)
-                }
-                   })
-                .disposed(by: disposeBag)
+            guard let self = self else {return}
+            self.tableView.isHidden = isHidden
+            if self.tableView.isHidden == true { self.hideTableViewButton.setTitle("コメント表示", for: .normal)
+                self.hideTableViewButton.backgroundColor = UIColor(white: 0.2, alpha: 1)
+            }
+            else {
+                self.hideTableViewButton.setTitle("コメント非表示", for: .normal)
+                self.hideTableViewButton.backgroundColor = UIColor(white: 0.3, alpha: 1)
+            }
+        })
+        .disposed(by: disposeBag)
         
         viewModel.hideFlowCommentBool.subscribe(onNext: {[weak self] isHidden in
-                guard let self = self else {return}
-                self.clearView.isHidden = isHidden
-                if  self.clearView.isHidden ==  true {
-                    self.hideFlowCommentButton.setTitle("ニコニコ風ON", for: .normal)
-                    self.hideFlowCommentButton.backgroundColor = UIColor(white: 0.2, alpha: 1)
-                } else {
-                    self.hideFlowCommentButton.setTitle("ニコニコ風OFF", for: .normal)
-                    self.hideFlowCommentButton.backgroundColor = UIColor(white: 0.3, alpha: 1)
-                     
-                }})
+                                                    guard let self = self else {return}
+                                                    self.clearView.isHidden = isHidden
+                                                    if  self.clearView.isHidden ==  true {
+                                                        self.hideFlowCommentButton.setTitle("ニコニコ風ON", for: .normal)
+                                                        self.hideFlowCommentButton.backgroundColor = UIColor(white: 0.2, alpha: 1)
+                                                    } else {
+                                                        self.hideFlowCommentButton.setTitle("ニコニコ風OFF", for: .normal)
+                                                        self.hideFlowCommentButton.backgroundColor = UIColor(white: 0.3, alpha: 1)
+                                                        
+                                                    }})
             .disposed(by: disposeBag)
-        }
+    }
     
     
     private func setCommentButton(){

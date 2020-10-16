@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E00C2FF252C737700EC2E9E /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 0E00C2FE252C737700EC2E9E /* RxBlocking */; };
+		0E00C301252C737700EC2E9E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0E00C300252C737700EC2E9E /* RxCocoa */; };
+		0E00C303252C737700EC2E9E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 0E00C302252C737700EC2E9E /* RxRelay */; };
 		0E292944251368AA007B2F1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E292943251368AA007B2F1B /* AppDelegate.swift */; };
 		0E292946251368AA007B2F1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E292945251368AA007B2F1B /* SceneDelegate.swift */; };
 		0E292948251368AA007B2F1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E292947251368AA007B2F1B /* ViewController.swift */; };
@@ -21,8 +24,6 @@
 		0E29297A25137222007B2F1B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E29297925137222007B2F1B /* Comment.swift */; };
 		0E29297C25137259007B2F1B /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E29297B25137259007B2F1B /* CommentView.swift */; };
 		0E29297E2513727D007B2F1B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E29297D2513727D007B2F1B /* Extensions.swift */; };
-		0E29298325137317007B2F1B /* File in Resources */ = {isa = PBXBuildFile; fileRef = 0E29298225137317007B2F1B /* File */; };
-		0E2929852513735D007B2F1B /* File2 in Resources */ = {isa = PBXBuildFile; fileRef = 0E2929842513735D007B2F1B /* File2 */; };
 		0E292987251373C5007B2F1B /* comments.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E292986251373C5007B2F1B /* comments.json */; };
 		0E2929892513740A007B2F1B /* channels.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E29298825137409007B2F1B /* channels.json */; };
 		0E29298B25137487007B2F1B /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E29298A25137487007B2F1B /* Channel.swift */; };
@@ -70,8 +71,6 @@
 		0E29297925137222007B2F1B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		0E29297B25137259007B2F1B /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		0E29297D2513727D007B2F1B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		0E29298225137317007B2F1B /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
-		0E2929842513735D007B2F1B /* File2 */ = {isa = PBXFileReference; lastKnownFileType = text; path = File2; sourceTree = "<group>"; };
 		0E292986251373C5007B2F1B /* comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comments.json; sourceTree = "<group>"; };
 		0E29298825137409007B2F1B /* channels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = channels.json; sourceTree = "<group>"; };
 		0E29298A25137487007B2F1B /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
@@ -90,7 +89,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E00C301252C737700EC2E9E /* RxCocoa in Frameworks */,
 				DAACBAEB3E488D588B60E59E /* Pods_CATechChallenge.framework in Frameworks */,
+				0E00C303252C737700EC2E9E /* RxRelay in Frameworks */,
+				0E00C2FF252C737700EC2E9E /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +115,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E00C30D252C769A00EC2E9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E29297B25137259007B2F1B /* CommentView.swift */,
+				0E2929732513718F007B2F1B /* CommentCell.swift */,
+				0E292947251368AA007B2F1B /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E00C30E252C76A200EC2E9E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E292975251371C8007B2F1B /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0E00C30F252C76B100EC2E9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E29298A25137487007B2F1B /* Channel.swift */,
+				0E29297925137222007B2F1B /* Comment.swift */,
+				0E292977251371F9007B2F1B /* CommentModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E00C310252C76BF00EC2E9E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0E29298825137409007B2F1B /* channels.json */,
+				0E292986251373C5007B2F1B /* comments.json */,
+				0E29294C251368AC007B2F1B /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		0E00C311252C772000EC2E9E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0E292943251368AA007B2F1B /* AppDelegate.swift */,
+				0E29294E251368AC007B2F1B /* LaunchScreen.storyboard */,
+				0E292945251368AA007B2F1B /* SceneDelegate.swift */,
+				0E292949251368AA007B2F1B /* Main.storyboard */,
+				0E292951251368AC007B2F1B /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		0E292937251368AA007B2F1B = {
 			isa = PBXGroup;
 			children = (
@@ -138,24 +190,12 @@
 		0E292942251368AA007B2F1B /* CATechChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				0E29298825137409007B2F1B /* channels.json */,
-				0E292986251373C5007B2F1B /* comments.json */,
-				0E292943251368AA007B2F1B /* AppDelegate.swift */,
-				0E292945251368AA007B2F1B /* SceneDelegate.swift */,
-				0E292947251368AA007B2F1B /* ViewController.swift */,
-				0E292949251368AA007B2F1B /* Main.storyboard */,
-				0E29294C251368AC007B2F1B /* Assets.xcassets */,
-				0E29294E251368AC007B2F1B /* LaunchScreen.storyboard */,
-				0E292951251368AC007B2F1B /* Info.plist */,
-				0E2929732513718F007B2F1B /* CommentCell.swift */,
-				0E292975251371C8007B2F1B /* ViewModel.swift */,
-				0E292977251371F9007B2F1B /* CommentModel.swift */,
-				0E29297925137222007B2F1B /* Comment.swift */,
-				0E29297B25137259007B2F1B /* CommentView.swift */,
+				0E00C310252C76BF00EC2E9E /* Resource */,
+				0E00C30F252C76B100EC2E9E /* Model */,
+				0E00C30E252C76A200EC2E9E /* ViewModel */,
+				0E00C30D252C769A00EC2E9E /* View */,
+				0E00C311252C772000EC2E9E /* Other */,
 				0E29297D2513727D007B2F1B /* Extensions.swift */,
-				0E29298225137317007B2F1B /* File */,
-				0E2929842513735D007B2F1B /* File2 */,
-				0E29298A25137487007B2F1B /* Channel.swift */,
 			);
 			path = CATechChallenge;
 			sourceTree = "<group>";
@@ -212,13 +252,17 @@
 				0E29293C251368AA007B2F1B /* Sources */,
 				0E29293D251368AA007B2F1B /* Frameworks */,
 				0E29293E251368AA007B2F1B /* Resources */,
-				04AAA7EE3F3F1B4DE40361D2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CATechChallenge;
+			packageProductDependencies = (
+				0E00C2FE252C737700EC2E9E /* RxBlocking */,
+				0E00C300252C737700EC2E9E /* RxCocoa */,
+				0E00C302252C737700EC2E9E /* RxRelay */,
+			);
 			productName = CATechChallenge;
 			productReference = 0E292940251368AA007B2F1B /* CATechChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -250,7 +294,6 @@
 				0E29295D251368AC007B2F1B /* Sources */,
 				0E29295E251368AC007B2F1B /* Frameworks */,
 				0E29295F251368AC007B2F1B /* Resources */,
-				D1C98D7A3E8AE41469901D3E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +337,9 @@
 				Base,
 			);
 			mainGroup = 0E292937251368AA007B2F1B;
+			packageReferences = (
+				0E00C2FD252C737700EC2E9E /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 0E292941251368AA007B2F1B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -310,9 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E29298325137317007B2F1B /* File in Resources */,
 				0E292950251368AC007B2F1B /* LaunchScreen.storyboard in Resources */,
-				0E2929852513735D007B2F1B /* File2 in Resources */,
 				0E29294D251368AC007B2F1B /* Assets.xcassets in Resources */,
 				0E29294B251368AA007B2F1B /* Main.storyboard in Resources */,
 				0E2929892513740A007B2F1B /* channels.json in Resources */,
@@ -337,23 +381,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04AAA7EE3F3F1B4DE40361D2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CATechChallenge/Pods-CATechChallenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CATechChallenge/Pods-CATechChallenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CATechChallenge/Pods-CATechChallenge-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		23EDE368AAF746A1D7C708A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,23 +445,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D1C98D7A3E8AE41469901D3E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CATechChallenge-CATechChallengeUITests/Pods-CATechChallenge-CATechChallengeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CATechChallenge-CATechChallengeUITests/Pods-CATechChallenge-CATechChallengeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CATechChallenge-CATechChallengeUITests/Pods-CATechChallenge-CATechChallengeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -782,6 +792,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0E00C2FD252C737700EC2E9E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0E00C2FE252C737700EC2E9E /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E00C2FD252C737700EC2E9E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		0E00C300252C737700EC2E9E /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E00C2FD252C737700EC2E9E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		0E00C302252C737700EC2E9E /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E00C2FD252C737700EC2E9E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0E292938251368AA007B2F1B /* Project object */;
 }
