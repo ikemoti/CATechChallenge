@@ -1,7 +1,8 @@
 
-# CyberAgentサマーインターン成果物
 
-### 制作内容
+![1c503524c8ea1f989a82bd45e394d926](https://www.cyberagent.co.jp/files/topics/24426_ext_03_0.jpg?width=250&height=141)
+
+### 作成物
 
 ニコニコ動画風のコメントが流せる動画アプリ
 
@@ -13,11 +14,42 @@
 
 ・ランダムなコメント装飾機能
 
-### 設計　MVVM
+### Environment
 
-### 使用ライブラリ
-RxSwift 
+- Xcode: 12.2
+- Swift: 5.3.1
 
-SwiftLint
+### Configuration
+
+- UI implementation: codeLayout + XIB
+- Architecture: MVVM + RxSwift
+
+### Setup
+
+1. Clone the project.
+
+```
+$ git clone https://github.com/ikemoti/bejiApp
+$ cd CATechChallenge
+```
+
+3. Run `make setup` .  
+```pod
+pod update
+```
+
+# Using Tools and Libraries
+
+## Tools
+- [SwiftLint](https://github.com/realm/SwiftLint)
+- [RxSwift](https://github.com/realm/SwiftLint)
+
+## Contribution
+
+I would be happy if you contribute :)
+
+- [New issue](https://github.com/ikemoti/CATechChallenge/issues/new)
+- [New pull request](https://github.com/ikemoti/CATechChallenge/compare)
+
 
 
